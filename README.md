@@ -3,15 +3,19 @@
 ## What is This?
 The first project created through an open development collaboration among [Game Dev League](https://discordapp.com/invite/gamedev) members.
 
-The direction of the game is decided by a democratic process among the members with the project lead only casting tie breaking votes.
+## Process
+
+The direction of the game is decided by a democratic process among the members. Discussion will be in threaded form via [issues](https://github.com/GDL-Collaborators/indigo/issues).
+
+In the case of community votes the reactions will be tallied as total :+1:s minus :-1:s. The project lead will cast only tie breaking votes.
 
 ## Getting Started
 * [Have a look at the roadmap](https://github.com/GDL-Collaborators/indigo/projects/2)
 * [Check out the open issues](https://github.com/GDL-Collaborators/indigo/issues)
-* [Contribute to development!](#Contributing)
+* Contribute to development! See below.
 
 ## Contributing
-**Important**: By contributing to the project to agree to release your work under the [project license](#License)
+**Important**: By contributing to the project to agree to release your work under the [project license](#License) below.
 
 You will need:
 * [Godot engine v3.2.1](https://godotengine.org/download)
