@@ -1,7 +1,7 @@
 # Codename Indigo
 
 ## What is This?
-The first project created through an open development collaboration among [Game Dev League](https://discordapp.com/invite/gamedev) members.
+The first project created through an open development collaboration among [Game Dev League](https://discordapp.com/invite/gamedev) members over the month of April.
 
 ## Process
 
