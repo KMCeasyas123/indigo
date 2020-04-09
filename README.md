@@ -4,7 +4,10 @@
 The first project created through an open development collaboration among [Game Dev League](https://discordapp.com/invite/gamedev) members over the month of April.
 
 ## About the game
-It will be a 2d top down advanture game where the player must overcome challenges on a series of floors as they climb the Ascension Tower. Primary gameplay consists of exploration, dialogue interaction and light puzzle solving.
+It will be a 2d top down adventure game where the player must overcome challenges on a series of floors as they climb the Ascension Tower. Primary gameplay consists of exploration, dialogue interaction and simple puzzle solving.
+
+The original premise is:
+> Climb the Ascension Tower, a mighty place of power, with your childhood friend. Each floor will challenge you with a unique puzzle. How far will you go to fulfill your dream?
 
 ## Process
 
