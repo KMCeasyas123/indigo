@@ -2,10 +2,12 @@ extends KinematicBody2D
 
 export var acceleration = 0.5
 export var deceleration = 0.75
-export var max_speed = 300
+export var max_speed = 250
 
 var velocity = Vector2.ZERO
 var direction = 'down'
+
+onready var activator: KinematicBody2D = $ActivateBox
 
 func _process(_delta):
 	var input = get_input_vector()
@@ -16,6 +18,14 @@ func _process(_delta):
 	pick_animation()
 
 	velocity = move_and_slide(velocity)
+
+func _unhandled_input(_event):
+	if Input.is_action_just_pressed('interact'):
+		var activated = activator.get_overlapping_bodies()
+
+		for thing in activated:
+			if thing.has_method('_interact'):
+				thing._interact(self)
 
 func pick_animation():
 	var horizontal = abs(velocity.x) > abs(velocity.y)
@@ -30,6 +40,8 @@ func pick_animation():
 		sprite.animation = 'walk_' + direction
 	else:
 		sprite.animation = direction
+
+	sprite.speed_scale = lerp(1, 2.5, velocity.length() / max_speed)
 
 func get_input_vector():
 	return Vector2(
