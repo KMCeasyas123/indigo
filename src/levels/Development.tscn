@@ -1,16 +1,16 @@
 [gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://objects/map/BaseTileset.tres" type="TileSet" id=1]
-[ext_resource path="res://scripts/TestNpc.gd" type="Script" id=2]
-[ext_resource path="res://vfx/material/AnimatedMat.tres" type="Material" id=3]
-[ext_resource path="res://assets/player/PlayerD.png" type="Texture" id=4]
-[ext_resource path="res://objects/Player.tscn" type="PackedScene" id=5]
-[ext_resource path="res://objects/Portal.tscn" type="PackedScene" id=6]
-[ext_resource path="res://objects/Entrance.tscn" type="PackedScene" id=7]
-[ext_resource path="res://objects/Dog.tscn" type="PackedScene" id=8]
-[ext_resource path="res://objects/Lever.tscn" type="PackedScene" id=9]
+[ext_resource path="res://objects/Lever.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scripts/TestNpc.gd" type="Script" id=3]
+[ext_resource path="res://vfx/material/AnimatedMat.tres" type="Material" id=4]
+[ext_resource path="res://assets/player/PlayerD.png" type="Texture" id=5]
+[ext_resource path="res://objects/Player.tscn" type="PackedScene" id=6]
+[ext_resource path="res://objects/Dog.tscn" type="PackedScene" id=7]
+[ext_resource path="res://objects/Portal.tscn" type="PackedScene" id=8]
+[ext_resource path="res://objects/Entrance.tscn" type="PackedScene" id=9]
 
-[sub_resource type="GDScript" id=2]
+[sub_resource type="GDScript" id=1]
 script/source = "extends Node2D
 
 func _on_Lever_flipped(state):
@@ -20,12 +20,12 @@ func _on_Lever_flipped(state):
     get_node('/root/GameState').lock_exit()
 "
 
-[sub_resource type="CapsuleShape2D" id=1]
+[sub_resource type="CapsuleShape2D" id=2]
 radius = 9.13333
 height = 7.90564
 
 [node name="Development Scene" type="Node2D"]
-script = SubResource( 2 )
+script = SubResource( 1 )
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource( 1 )
@@ -45,32 +45,32 @@ __meta__ = {
 
 [node name="YSort" type="YSort" parent="."]
 
-[node name="Lever" parent="YSort" instance=ExtResource( 9 )]
+[node name="Lever" parent="YSort" instance=ExtResource( 2 )]
 position = Vector2( 585.004, 561.228 )
 
 [node name="Npc" type="StaticBody2D" parent="YSort"]
 position = Vector2( 594.696, 230.786 )
-script = ExtResource( 2 )
+script = ExtResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="YSort/Npc"]
-material = ExtResource( 3 )
+material = ExtResource( 4 )
 position = Vector2( 0, -24.4558 )
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Npc"]
 position = Vector2( 0, -0.248779 )
 rotation = 1.5708
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
-[node name="Player" parent="YSort" instance=ExtResource( 5 )]
+[node name="Player" parent="YSort" instance=ExtResource( 6 )]
 position = Vector2( 1061.4, 589.976 )
 
-[node name="Dog" parent="YSort" instance=ExtResource( 8 )]
+[node name="Dog" parent="YSort" instance=ExtResource( 7 )]
 position = Vector2( 1114.51, 610.42 )
 
-[node name="Portal" parent="YSort" instance=ExtResource( 6 )]
+[node name="Portal" parent="YSort" instance=ExtResource( 8 )]
 position = Vector2( 165.271, 214.648 )
 
-[node name="Entrance" parent="YSort" instance=ExtResource( 7 )]
+[node name="Entrance" parent="YSort" instance=ExtResource( 9 )]
 position = Vector2( 1061.4, 574.624 )
 [connection signal="flipped" from="YSort/Lever" to="." method="_on_Lever_flipped"]
