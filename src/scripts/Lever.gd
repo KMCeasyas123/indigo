@@ -11,6 +11,7 @@ func _ready():
 
 func _interact(_player):
   on = !on
+  $AudioStreamPlayer2D.play()
   set_sprite()
   emit_signal('flipped', on)
 

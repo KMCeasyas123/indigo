@@ -85,11 +85,14 @@ polygon = PoolVector2Array( -23.2707, -7.24409, -26.2628, 1.47916, -20.7956, 10.
 rotation = 1.5708
 shape = SubResource( 1 )
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+[node name="AnimatedSprite" type="AnimatedSprite" parent="." groups=[
+"use_sprite_effect",
+]]
 material = ExtResource( 2 )
 position = Vector2( -0.149887, -27.4343 )
 frames = SubResource( 2 )
 animation = "walk_up"
+frame = 3
 playing = true
 
 [node name="ActivateBox" type="Area2D" parent="."]

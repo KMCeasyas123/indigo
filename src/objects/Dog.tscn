@@ -42,12 +42,14 @@ gravity_scale = 0.0
 can_sleep = false
 script = ExtResource( 14 )
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+[node name="AnimatedSprite" type="AnimatedSprite" parent="." groups=[
+"use_sprite_effect",
+]]
 material = ExtResource( 7 )
 position = Vector2( -0.550331, -15.1344 )
 frames = SubResource( 1 )
 animation = "idle1"
-frame = 1
+frame = 2
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
