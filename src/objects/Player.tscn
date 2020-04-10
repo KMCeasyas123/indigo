@@ -86,7 +86,7 @@ shape = SubResource( 1 )
 position = Vector2( -0.149887, -27.4343 )
 frames = SubResource( 2 )
 animation = "walk_up"
-frame = 2
+frame = 3
 playing = true
 
 [node name="ActivateBox" type="Area2D" parent="."]
