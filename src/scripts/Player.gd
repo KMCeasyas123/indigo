@@ -6,6 +6,7 @@ export var max_speed = 250
 
 var velocity = Vector2.ZERO
 var direction = 'down'
+var walk_frame = 0
 
 onready var activator: KinematicBody2D = $ActivateBox
 
@@ -30,16 +31,23 @@ func _unhandled_input(_event):
 func pick_animation():
 	var horizontal = abs(velocity.x) > abs(velocity.y)
 	var sprite: AnimatedSprite = $AnimatedSprite
+	var last_anim = sprite.animation
 
 	if velocity.length() > 1:
 		if horizontal:
 			direction = 'right' if velocity.x > 0 else 'left'
 		else:
 			direction = 'down' if velocity.y > 0 else 'up'
-	
+			
 		sprite.animation = 'walk_' + direction
+		
+		if !last_anim.begins_with('walk_'):
+			sprite.frame = walk_frame
+		else:
+			walk_frame = sprite.frame
 	else:
 		sprite.animation = direction
+
 
 	sprite.speed_scale = lerp(1, 2.5, velocity.length() / max_speed)
 
