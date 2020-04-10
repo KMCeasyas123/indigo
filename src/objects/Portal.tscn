@@ -1,13 +1,12 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://assets/material/AnimatedMat.tres" type="Material" id=1]
+[ext_resource path="res://vfx/material/AnimatedMat.tres" type="Material" id=1]
 [ext_resource path="res://assets/objects/Portal.png" type="Texture" id=2]
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 12.3205, 7.67651 )
 
 [node name="Portal" type="StaticBody2D"]
-editor/display_folded = true
 
 [node name="Portal" type="Sprite" parent="."]
 material = ExtResource( 1 )
@@ -16,8 +15,8 @@ texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -35.0482, -3.9528 )
-shape = SubResource( 1 )
+shape = SubResource( 3 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
 position = Vector2( 35.1459, -2.02106 )
-shape = SubResource( 1 )
+shape = SubResource( 3 )
