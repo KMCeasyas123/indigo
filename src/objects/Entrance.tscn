@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://vfx/material/AnimatedMat.tres" type="Material" id=1]
 [ext_resource path="res://assets/objects/Entrance.png" type="Texture" id=2]
@@ -28,11 +28,16 @@ position = Vector2( 34.2869, -1.74341 )
 rotation = 1.5708
 shape = SubResource( 1 )
 
-[node name="SmokeParticle" parent="." instance=ExtResource( 3 )]
+[node name="SmokeParticle" parent="." groups=[
+"use_sprite_effect",
+] instance=ExtResource( 3 )]
 position = Vector2( -40.1746, -38.3585 )
 
-[node name="SmokeParticle2" parent="." instance=ExtResource( 3 )]
-position = Vector2( 34.9354, -42.6814 )
+[node name="SmokeParticle2" parent="." groups=[
+"use_sprite_effect",
+] instance=ExtResource( 3 )]
+position = Vector2( 34.7417, -40.5506 )
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
 volume_db = -10.0
