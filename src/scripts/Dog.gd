@@ -1,6 +1,6 @@
-extends KinematicBody2D
+extends RigidBody2D
 
-var speed = 200
+var speed = 225
 var velocity = Vector2.ZERO
 var idle_timer = 1
 var follow_distance = 50
@@ -9,7 +9,7 @@ var follow_timer =  1
 onready var player = get_tree().get_nodes_in_group('player').front()
 onready var sprite: AnimatedSprite = $AnimatedSprite
 
-func _process(delta):
+func _physics_process(delta):
   var target_speed
 
   follow_timer -= delta
@@ -17,16 +17,18 @@ func _process(delta):
     adjust_follow_distance()
 
   if position.distance_to(player.position) > follow_distance:
-	  target_speed = position.direction_to(player.position) * speed
+    target_speed = position.direction_to(player.position) * speed
   else:
-	  target_speed = Vector2.ZERO
+    target_speed = Vector2.ZERO
   
   velocity = velocity.linear_interpolate(target_speed, 0.5)
 
   idle_timer -= delta
   pick_animation()
 
-  velocity = move_and_slide(velocity)
+  linear_velocity = velocity
+  rotation = 0
+  angular_velocity = 0
 
 func pick_animation():
   if velocity.length() > 0.1:

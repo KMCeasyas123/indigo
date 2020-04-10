@@ -37,7 +37,9 @@ animations = [ {
 radius = 4.93855
 height = 13.3785
 
-[node name="Dog" type="KinematicBody2D"]
+[node name="Dog" type="RigidBody2D"]
+gravity_scale = 0.0
+can_sleep = false
 script = ExtResource( 14 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
@@ -45,7 +47,7 @@ material = ExtResource( 7 )
 position = Vector2( -0.550331, -15.1344 )
 frames = SubResource( 1 )
 animation = "idle1"
-frame = 2
+frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
