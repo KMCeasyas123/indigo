@@ -3,7 +3,6 @@
 [ext_resource path="res://vfx/material/AnimatedMat.tres" type="Material" id=1]
 [ext_resource path="res://assets/objects/Entrance.png" type="Texture" id=2]
 
-
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 4.8221
 height = 7.3958

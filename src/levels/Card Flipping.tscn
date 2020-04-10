@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://objects/map/BaseTileset.tres" type="TileSet" id=1]
 [ext_resource path="res://assets/objects/Cards.png" type="Texture" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://objects/Player.tscn" type="PackedScene" id=5]
 [ext_resource path="res://objects/Card.tscn" type="PackedScene" id=6]
 [ext_resource path="res://objects/Portal.tscn" type="PackedScene" id=7]
+[ext_resource path="res://objects/Dog.tscn" type="PackedScene" id=8]
 
 [sub_resource type="AtlasTexture" id=1]
 flags = 4
@@ -42,54 +43,70 @@ tile_data = PoolIntArray( 0, 7, 0, 1, 7, 0, 2, 7, 0, 3, 7, 0, 4, 7, 0, 5, 7, 0, 
 
 [node name="Card" parent="." instance=ExtResource( 6 )]
 position = Vector2( 472, 224 )
+z_index = 0
 _cardgame = NodePath("../CardGame")
 
 [node name="Card3" parent="." instance=ExtResource( 6 )]
 position = Vector2( 552, 224 )
+z_index = 0
 _cardgame = NodePath("../CardGame")
 
 [node name="Card4" parent="." instance=ExtResource( 6 )]
 position = Vector2( 632, 224 )
+z_index = 0
 _cardgame = NodePath("../CardGame")
 
 [node name="Card5" parent="." instance=ExtResource( 6 )]
 position = Vector2( 712, 224 )
+z_index = 0
 _cardgame = NodePath("../CardGame")
 
 [node name="Card10" parent="." instance=ExtResource( 6 )]
 position = Vector2( 792, 224 )
+z_index = 0
 _cardgame = NodePath("../CardGame")
 
 [node name="Card11" parent="." instance=ExtResource( 6 )]
 position = Vector2( 792, 320 )
+z_index = 0
 _cardgame = NodePath("../CardGame")
 
 [node name="Card6" parent="." instance=ExtResource( 6 )]
 position = Vector2( 472, 320 )
+z_index = 0
 _cardgame = NodePath("../CardGame")
 
 [node name="Card7" parent="." instance=ExtResource( 6 )]
 position = Vector2( 552, 320 )
+z_index = 0
 _cardgame = NodePath("../CardGame")
 
 [node name="Card8" parent="." instance=ExtResource( 6 )]
 position = Vector2( 632, 319 )
+z_index = 0
 _cardgame = NodePath("../CardGame")
 
 [node name="Card9" parent="." instance=ExtResource( 6 )]
 position = Vector2( 712, 320 )
+z_index = 0
 _cardgame = NodePath("../CardGame")
 
 [node name="CardGame" type="Node2D" parent="."]
 script = ExtResource( 3 )
 _card_textures = [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ) ]
 
-[node name="Entrance" parent="." instance=ExtResource( 4 )]
-position = Vector2( 982.678, 530.088 )
+[node name="YSort" type="YSort" parent="."]
 
-[node name="Portal" parent="." instance=ExtResource( 7 )]
-position = Vector2( 166.457, 254.013 )
+[node name="Player" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( 909.027, 560.405 )
+acceleration = 0.4
+max_speed = 250
 
-[node name="Player" parent="." instance=ExtResource( 5 )]
-position = Vector2( 432.164, 515.65 )
-z_index = 1
+[node name="Dog" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( 955.055, 562.21 )
+
+[node name="Entrance" parent="YSort" instance=ExtResource( 4 )]
+position = Vector2( 1040.79, 559.502 )
+
+[node name="Portal" parent="YSort" instance=ExtResource( 7 )]
+position = Vector2( 196.955, 212.942 )
