@@ -1,43 +1,46 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://vfx/material/AnimatedMat.tres" type="Material" id=1]
-[ext_resource path="res://assets/objects/Portal.png" type="Texture" id=2]
-[ext_resource path="res://scripts/Portal.gd" type="Script" id=3]
+[ext_resource path="res://scripts/Portal.gd" type="Script" id=1]
+[ext_resource path="res://vfx/material/AnimatedMat.tres" type="Material" id=2]
+[ext_resource path="res://assets/objects/Portal.png" type="Texture" id=3]
+[ext_resource path="res://vfx/material/PortalMat.tres" type="Material" id=4]
+[ext_resource path="res://assets/objects/PortalDoor.png" type="Texture" id=5]
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 12.3205, 7.67651 )
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 21.8802, 7.54219 )
 
 [node name="Portal" type="StaticBody2D" groups=[
 "portal",
 ]]
-script = ExtResource( 3 )
+script = ExtResource( 1 )
 
 [node name="Portal" type="Sprite" parent="." groups=[
 "use_sprite_effect",
 ]]
-material = ExtResource( 1 )
+material = ExtResource( 2 )
 position = Vector2( 0, -33.8626 )
-texture = ExtResource( 2 )
+texture = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -35.0482, -3.9528 )
-shape = SubResource( 3 )
+shape = SubResource( 1 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
 position = Vector2( 35.1459, -2.02106 )
-shape = SubResource( 3 )
+shape = SubResource( 1 )
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2( 0, -3.00494 )
 rotation = 0.0475972
-shape = SubResource( 4 )
+shape = SubResource( 2 )
 
-[node name="Magic" type="Polygon2D" parent="."]
-color = Color( 0.470588, 0.823529, 0.976471, 0.47451 )
-polygon = PoolVector2Array( -26.592, 1.2895, -25.3746, -12.9145, -22.7646, -27.289, -17.184, -40.5966, -6.88136, -51.3285, 1.91883, -51.7578, 9.64582, -46.6064, 21.0217, -18.7034, 18.446, -17.8448, 22.5242, -3.24942, 24.8852, -3.24942, 25.5291, 3.40439 )
+[node name="Magic" type="Sprite" parent="."]
+material = ExtResource( 4 )
+position = Vector2( 0, -33.8806 )
+texture = ExtResource( 5 )
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
