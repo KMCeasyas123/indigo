@@ -41,6 +41,7 @@ shape = SubResource( 2 )
 
 [node name="Magic" type="Sprite" parent="."]
 material = ExtResource( 4 )
-position = Vector2( 0, -33.8806 )
+position = Vector2( 1.89386, -33.8806 )
+scale = Vector2( 0.837669, 0.889074 )
 texture = ExtResource( 5 )
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]

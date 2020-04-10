@@ -4,6 +4,7 @@ extends Node
 var levels = [
   preload('res://levels/Development.tscn'),
   preload('res://levels/Card Flipping.tscn'),
+  preload('res://levels/Dog Switch.tscn'),
 ]
 var title_scene = preload('res://Title.tscn')
 var final_scene = preload('res://Final.tscn')
