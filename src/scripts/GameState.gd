@@ -1,8 +1,8 @@
 extends Node
 
 var levels = [
-  preload('res://levels/Card Flipping.tscn'),
   preload('res://levels/Development.tscn'),
+  preload('res://levels/Card Flipping.tscn'),
 ]
 var final_scene = preload('res://levels/Final.tscn')
 var current_level = 0
