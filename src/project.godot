@@ -27,6 +27,7 @@ config/icon="res://assets/Portrait.png"
 [autoload]
 
 UiMainLayer="*res://ui/UiMainLayer.tscn"
+GameState="*res://scripts/GameState.gd"
 
 [display]
 

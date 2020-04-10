@@ -1,8 +1,8 @@
 extends KinematicBody2D
 
-export var acceleration = 0.5
-export var deceleration = 0.75
-export var max_speed = 200
+var acceleration = 0.4
+var deceleration = 0.75
+var max_speed = 250
 
 var velocity = Vector2.ZERO
 var direction = 'down'

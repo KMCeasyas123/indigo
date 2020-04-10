@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://ui/BigFont.tres" type="DynamicFont" id=1]
+
+[node name="Final" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+margin_left = 554.939
+margin_top = 299.569
+margin_right = 669.939
+margin_bottom = 346.569
+custom_fonts/font = ExtResource( 1 )
+text = "You Win!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
