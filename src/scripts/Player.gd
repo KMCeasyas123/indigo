@@ -7,6 +7,7 @@ var max_speed = 250
 var velocity = Vector2.ZERO
 var direction = 'down'
 var walk_frame = 0
+var interactables = []
 
 onready var activator: KinematicBody2D = $ActivateBox
 
@@ -18,16 +19,20 @@ func _process(_delta):
 
   pick_animation()
 
+  $HeyListen.visible = interactables.size()
+
   velocity = move_and_slide(velocity)
 
-func _unhandled_input(_event):
-  if Input.is_action_just_pressed('interact'):
-    var activated = activator.get_overlapping_bodies()
+func _physics_process(_delta):
+  interactables = []
 
-    for thing in activated:
-      if thing.has_method('_interact'):
-        thing._interact(self)
-        break
+  for thing in activator.get_overlapping_bodies():
+    if thing.has_method('_interact'):
+      interactables.append(thing)
+
+func _unhandled_input(_event):
+  if Input.is_action_just_pressed('interact') and interactables.size():
+    interactables.front()._interact(self)
 
 func pick_animation():
   var horizontal = abs(velocity.x) > abs(velocity.y)
