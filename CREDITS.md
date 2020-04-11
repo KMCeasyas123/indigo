@@ -62,6 +62,7 @@
 * Portal Enter
 * Portal Exit
 * Switch/Switch Low
+* Dog barks
 
 ---
 
