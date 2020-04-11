@@ -24,10 +24,10 @@ func _physics_process(delta):
       target_speed = Vector2.ZERO
     
     velocity = velocity.linear_interpolate(target_speed, 0.5)
+    linear_velocity = velocity
   else:
-    velocity *= 0.8
+    linear_velocity *= 0.8
 
-  linear_velocity = velocity
   rotation = 0
   angular_velocity = 0
     
@@ -39,7 +39,7 @@ func _interact(_player):
 
 func pick_animation():
   if sitting:
-    sprite.animation = 'sit'
+    sprite.animation = 'run' if linear_velocity.length() > 5 else 'sit'
     sprite.flip_h = position.direction_to(player.position).x >= 0
   else:
     if velocity.length() > 0.1:
