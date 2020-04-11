@@ -56,6 +56,7 @@
 ## Music
 * 60 bpm Gloomy Organ
 * 68 Jazz 100bpm 70s Keys
+* Bright Jam 2
 
 ## SFX
 * Portal Enter
