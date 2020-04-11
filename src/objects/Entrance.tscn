@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://assets/material/AnimatedMat.tres" type="Material" id=1]
+[ext_resource path="res://vfx/material/AnimatedMat.tres" type="Material" id=1]
 [ext_resource path="res://assets/objects/Entrance.png" type="Texture" id=2]
+[ext_resource path="res://objects/SmokeParticle.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/sfx/portal_sound.ogg" type="AudioStream" id=4]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 4.8221
@@ -9,7 +11,9 @@ height = 7.3958
 
 [node name="Entrance" type="StaticBody2D"]
 
-[node name="Entrance" type="Sprite" parent="."]
+[node name="Entrance" type="Sprite" parent="." groups=[
+"use_sprite_effect",
+]]
 material = ExtResource( 1 )
 position = Vector2( 0, -11.1421 )
 texture = ExtResource( 2 )
@@ -23,3 +27,19 @@ shape = SubResource( 1 )
 position = Vector2( 34.2869, -1.74341 )
 rotation = 1.5708
 shape = SubResource( 1 )
+
+[node name="SmokeParticle" parent="." groups=[
+"use_sprite_effect",
+] instance=ExtResource( 3 )]
+position = Vector2( -40.1746, -38.3585 )
+
+[node name="SmokeParticle2" parent="." groups=[
+"use_sprite_effect",
+] instance=ExtResource( 3 )]
+position = Vector2( 34.7417, -40.5506 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = -10.0
+pitch_scale = 1.2
+autoplay = true

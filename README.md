@@ -1,5 +1,7 @@
 # Codename Indigo
 
+![Gameplay Preview](preview.gif)
+
 ## What is This?
 The first project created through an open development collaboration among [Game Dev League](https://discordapp.com/invite/gamedev) members over the month of April.
 
@@ -41,3 +43,19 @@ Next add your work to the project, then when you're finished:
 ![](https://i.creativecommons.org/l/by-sa/4.0/88x31.png)
 
 All code and assets are provided under the terms of the [Creative Commons Attribution-ShareAlike 4.0](http://creativecommons.org/licenses/by-sa/4.0/) license.
+
+## Credits
+Tristan Shelton - GFX, Scripts
+
+Jason Beetham - VFX, Shaders
+
+Danny Webbie - Scripting, Gameplay, GFX
+
+Collectivenectar - Music, SFX
+
+Xahellz - Concept, Design
+
+KMC - Design, Gameplay
+
+See [CREDITS](CREDITS.md) for details.
+

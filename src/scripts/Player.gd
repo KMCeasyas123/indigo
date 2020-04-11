@@ -1,14 +1,16 @@
 extends KinematicBody2D
 
-export var acceleration = 0.5
-export var deceleration = 0.75
-export var max_speed = 250
+var acceleration = 0.4
+var deceleration = 0.75
+var max_speed = 250
 
 var velocity = Vector2.ZERO
 var direction = 'down'
 var walk_frame = 0
+var interactables = []
 
 onready var activator: KinematicBody2D = $ActivateBox
+onready var dog = get_tree().get_nodes_in_group('dog').front()
 
 func _process(_delta):
 	var input = get_input_vector()
@@ -18,15 +20,26 @@ func _process(_delta):
 
 	pick_animation()
 
+	$HeyListen.visible = interactables.size()
+
 	velocity = move_and_slide(velocity)
 
-func _unhandled_input(_event):
-	if Input.is_action_just_pressed('interact'):
-		var activated = activator.get_overlapping_bodies()
+func _physics_process(_delta):
+	interactables = []
 
-		for thing in activated:
-			if thing.has_method('_interact'):
-				thing._interact(self)
+	for thing in activator.get_overlapping_bodies():
+		if thing.has_method('_interact'):
+			interactables.append(thing)
+
+func _unhandled_input(_event):
+	if Input.is_action_just_pressed('interact') and interactables.size():
+		interactables.front()._interact(self)
+	if Input.is_action_just_pressed('dog'):
+		match dog.state:
+			dog.State.FOLLOW:
+				dog.sit()
+			dog.State.SIT:
+				dog.follow(self)
 
 func pick_animation():
 	var horizontal = abs(velocity.x) > abs(velocity.y)

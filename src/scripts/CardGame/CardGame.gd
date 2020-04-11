@@ -36,7 +36,7 @@ func on_card_flip(card : Card):
 				allCards.erase(card)
 				card.queue_free()
 				if allCards.size() == 0:
-					#TODO: Win floor!
+					get_node('/root/GameState').unlock_exit()
 					pass
 			else:
 				_previously_flipped_card.start_delayed_flip(_delayed_flip_time)

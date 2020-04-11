@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/angry_bark.ogg-3c63e0347feff8602158709cb4e60741.oggstr"
+
+[deps]
+
+source_file="res://assets/sfx/angry_bark.ogg"
+dest_files=[ "res://.import/angry_bark.ogg-3c63e0347feff8602158709cb4e60741.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

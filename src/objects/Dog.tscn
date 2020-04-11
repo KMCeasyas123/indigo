@@ -1,0 +1,65 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://assets/pup/Wag3.png" type="Texture" id=1]
+[ext_resource path="res://assets/pup/Wag5.png" type="Texture" id=2]
+[ext_resource path="res://assets/pup/Wag6.png" type="Texture" id=3]
+[ext_resource path="res://assets/pup/Wag1.png" type="Texture" id=4]
+[ext_resource path="res://assets/pup/Stand.png" type="Texture" id=5]
+[ext_resource path="res://assets/pup/Wag4.png" type="Texture" id=6]
+[ext_resource path="res://vfx/material/AnimatedMat.tres" type="Material" id=7]
+[ext_resource path="res://assets/pup/Wag2.png" type="Texture" id=8]
+[ext_resource path="res://assets/pup/Run1.png" type="Texture" id=9]
+[ext_resource path="res://assets/pup/Run3.png" type="Texture" id=10]
+[ext_resource path="res://assets/pup/Run2.png" type="Texture" id=11]
+[ext_resource path="res://assets/pup/Run5.png" type="Texture" id=12]
+[ext_resource path="res://assets/pup/Run4.png" type="Texture" id=13]
+[ext_resource path="res://scripts/Dog.gd" type="Script" id=14]
+[ext_resource path="res://assets/pup/Sit.png" type="Texture" id=15]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 15 ) ],
+"loop": true,
+"name": "sit",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "stand",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 9 ), ExtResource( 11 ), ExtResource( 10 ), ExtResource( 13 ), ExtResource( 12 ) ],
+"loop": true,
+"name": "run",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ), ExtResource( 8 ), ExtResource( 1 ), ExtResource( 6 ), ExtResource( 2 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "idle1",
+"speed": 10.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 4.93855
+height = 13.3785
+
+[node name="Dog" type="RigidBody2D" groups=[
+"dog",
+"step_button",
+]]
+gravity_scale = 0.0
+can_sleep = false
+script = ExtResource( 14 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="." groups=[
+"use_sprite_effect",
+]]
+material = ExtResource( 7 )
+position = Vector2( -0.550331, -15.1344 )
+frames = SubResource( 1 )
+animation = "sit"
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource( 2 )
