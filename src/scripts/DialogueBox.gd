@@ -20,7 +20,7 @@ func _ready():
 	while file:
 		if file.ends_with('.png'):
 			var name = file.trim_suffix('.png')
-			portraits[name] = load('res://assets/portraits/' + name + '.png')
+			portraits[name] = load('res://assets/portraits/' + file)
 		file = folder.get_next()
 
 	folder.list_dir_end()
@@ -47,7 +47,7 @@ func read_item():
 		dialogue_name.text = item.name
 		dialogue_body.text = item.body
 
-		if portraits[item.portrait]:
+		if item.has('portrait') and portraits.has(item.portrait):
 			dialogue_portrait.texture = portraits[item.portrait]
 		else:
 			dialogue_portrait.texture = portraits['Default']
