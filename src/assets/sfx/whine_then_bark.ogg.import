@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/whine_then_bark.ogg-4f3a9352534486a5faf135c5c3dc4fae.oggstr"
+
+[deps]
+
+source_file="res://assets/sfx/whine_then_bark.ogg"
+dest_files=[ "res://.import/whine_then_bark.ogg-4f3a9352534486a5faf135c5c3dc4fae.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
