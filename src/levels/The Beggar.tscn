@@ -38,7 +38,9 @@ position = Vector2( 180.4, 583.624 )
 position = Vector2( 869.791, 405.641 )
 script = ExtResource( 3 )
 
-[node name="Beggar" type="Sprite" parent="StaticBody2D"]
+[node name="Beggar" type="Sprite" parent="StaticBody2D" groups=[
+"use_sprite_effect",
+]]
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
