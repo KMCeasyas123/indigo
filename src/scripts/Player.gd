@@ -27,6 +27,7 @@ func _unhandled_input(_event):
     for thing in activated:
       if thing.has_method('_interact'):
         thing._interact(self)
+        break
 
 func pick_animation():
   var horizontal = abs(velocity.x) > abs(velocity.y)

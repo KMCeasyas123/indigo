@@ -67,7 +67,7 @@ animations = [ {
 } ]
 
 [sub_resource type="CapsuleShape2D" id=3]
-radius = 11.5632
+radius = 15.8683
 height = 15.0545
 
 [node name="Player" type="KinematicBody2D" groups=[
@@ -93,7 +93,7 @@ material = ExtResource( 2 )
 position = Vector2( -0.149887, -27.4343 )
 frames = SubResource( 2 )
 animation = "walk_up"
-frame = 2
+frame = 1
 playing = true
 
 [node name="ActivateBox" type="Area2D" parent="."]
