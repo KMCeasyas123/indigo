@@ -46,10 +46,15 @@ All code and assets are provided under the terms of the [Creative Commons Attrib
 
 ## Credits
 Tristan Shelton - GFX, Scripts
+
 Jason Beetham - VFX, Shaders
+
 Danny Webbie - Scripting, Gameplay, GFX
+
 Collectivenectar - Music, SFX
+
 Xahellz - Concept, Design
+
 KMC - Design, Gameplay
 
 See [CREDITS](CREDITS.md) for details.
