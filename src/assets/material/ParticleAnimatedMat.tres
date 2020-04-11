@@ -1,6 +1,9 @@
 [gd_resource type="ShaderMaterial" load_steps=2 format=2]
 
-[ext_resource path="res://scripts/shaders/Animated.shader" type="Shader" id=1]
+[ext_resource path="res://vfx/shaders/Animated.shader" type="Shader" id=1]
 
 [resource]
 shader = ExtResource( 1 )
+shader_param/strength = 1.0
+shader_param/noiseScale = 1.0
+shader_param/timeStep = 0.25
