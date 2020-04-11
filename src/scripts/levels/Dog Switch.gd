@@ -28,4 +28,4 @@ func check_solved():
 			switch.locked = true
 			
 		get_node('/root/GameState').unlock_exit()
-		get_tree().get_nodes_in_group('dog').front().sitting = false
+		get_tree().get_nodes_in_group('dog').front().follow_player()

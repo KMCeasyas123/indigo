@@ -10,6 +10,7 @@ var walk_frame = 0
 var interactables = []
 
 onready var activator: KinematicBody2D = $ActivateBox
+onready var dog = get_tree().get_nodes_in_group('dog').front()
 
 func _process(_delta):
 	var input = get_input_vector()
@@ -33,6 +34,12 @@ func _physics_process(_delta):
 func _unhandled_input(_event):
 	if Input.is_action_just_pressed('interact') and interactables.size():
 		interactables.front()._interact(self)
+	if Input.is_action_just_pressed('dog'):
+		match dog.state:
+			dog.State.FOLLOW:
+				dog.sit()
+			dog.State.SIT:
+				dog.follow(self)
 
 func pick_animation():
 	var horizontal = abs(velocity.x) > abs(velocity.y)

@@ -16,6 +16,7 @@ var use_animation_effect = true setget animation_effect_toggle
 # Misc
 var sprite_material = load('res://vfx/material/AnimatedMat.tres')
 var canvas_material = load('res://vfx/material/CanvasAnimatedMat.tres')
+onready var viewport = get_tree()
 
 func _ready():
 	# For debug purposes attempt to find the active scene
