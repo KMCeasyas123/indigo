@@ -1,7 +1,6 @@
 # Godot-specific ignores
 src/.import/
 src/export.cfg
-src/export_presets.cfg
 
 # Imported translations (automatically generated from CSV files)
 src/*.translation
